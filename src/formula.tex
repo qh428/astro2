@@ -1,0 +1,80 @@
+\clearpage
+\section{Formeln und Umrechnungen}
+\label{sec:formeln_und_umrechnungen}
+
+Dieser Abschnitt wird in zwei Unterkategorien aufgeteilt: Photometrie und Kinematik.
+Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus der Vorlesung ``Einführung in die Astronomie 2''.
+
+
+\subsection{Photometrie}
+\label{subsec:photometrie}
+
+\begin{enumerate}[label=$\smalltriangleright$]
+  \item
+  Der Strahlungsfluss $F$ (engl.\ \textit{flux}) gibt die eingehende Energie pro Fläche und Zeit an.
+  Üblicherweise hat $F$ die Einheit [\si{\erg\per\centi\metre\squared\per\second}].
+
+  \item
+  Ein Schwarzer Strahler (engl.\ \textit{black body}) ist ein idealisierter Körper, welcher jede einfallende Strahlung absorbiert.
+  Er emittiert Strahlung, die der Planck'schen Funktion (engl.\ \textit{Planck's law}) folgt:
+  \begin{equation}
+    B_{\nu, T} = 2 \Big( \frac{\nu}{\mathrm{c}} \Big)^{2} \frac{\mathrm{h}\nu}{\exp \big( \frac{\mathrm{h}\nu}{k_{\mathrm{B}} T} \big) - 1} \quad,
+  \end{equation}
+  mit den Variablen $\nu$ als Frequenz und $T$ als Temperatur.
+  $\mathrm{h}$ ist das Planck'sche Wirkungsquantum, $\mathrm{c}$ die Lichtgeschwindigkeit, und $k_{\mathrm{B}}$ die Boltzmannkonstante.
+
+  \item
+  Der Strahlungsfluss $F$ eines Schwarzen Körpers hängt mit seiner Oberflächentemperatur $T$ zusammen.
+  Es gilt
+  \begin{equation*}
+    F = \sigma_{\mathrm{SB}} T^{4} \quad ,
+  \end{equation*}
+  wobei $\sigma_{\mathrm{SB}}$ als Stefan-Boltzmann Konstante (engl.\ \textit{Stefan-Boltzmann constant}).
+
+  In der Astronomie nehmen wir an, dass Sterne ideale Schwarze Körper sind.
+  Dies bedeutet, dass wir die Sterne durch eine effektive Temperatur $T_{\mathrm{eff}}$ beschrieben werden können.
+  Diese Temperatur besitzt ein Schwarzer Körper, wenn er den selben Strahlungsfluss wie ein Stern emittiert.
+  Daher erhalten wir eine Relation zwischen dem Fluss eines Sterns und dessen effektive Temperatur:
+  \begin{equation}
+    F = \sigma_{\mathrm{SB}} T_{\mathrm{eff}}^{4} \quad  \quad .
+  \end{equation}
+
+  \item
+  Das Wien'sche Verschiebungsgesetz (engl.\ \textit{Wien's displacement law}) ist eine Approximation für das Maximum der oben aufgeführten Planck'schen Funktion.
+  Es ist gegeben durch
+  \begin{align}
+    \nu_{\mathrm{max}} \; [\si{\hertz}] & \approx 3 \frac{k_{\mathrm{B}} T}{\mathrm{h}} \\
+                                     & \approx \frac{\SI{5.879e10}{\hertz\per\kelvin}}{T} \quad .
+  \end{align}
+
+  Man kann das Verschiebungsgesetz auch also Funktion der Wellenlänge $\lambda$ ausdrücken:
+  \begin{equation}
+    \lambda_{\mathrm{max}} \; [\si{\micro\metre}] \approx \frac{\SI{2898}{\micro\metre\per\kelvin}}{T} \quad .
+  \end{equation}
+
+
+  \item
+  Die scheinbare Helligkeit (engl.\ \textit{apparent magnitude}) $m$ wird durch einen Strahlungsfluss $F$ bestimmt.
+  Es gilt
+  \begin{equation}
+    m = -2.5 \log_{10} \bigg( \frac{F}{F_{\mathrm{ref}}} \bigg) \quad ,
+  \end{equation}
+  wobei $F_{\mathrm{ref}}$ ein Referenzfluss ist.
+  Typischerweise nutzt man für $F_{\mathrm{ref}}$ den Fluss des Sterns Vega, jedoch existieren auch andere Referenzflüsse.
+
+  \item
+  Die Oberflächenhelligkeit $\mu$ (engl.\ \textit{surface brightness}) gibt den Fluss $F$ pro Fläche $A$ an:
+  \begin{align}
+    \mu \; [\si{\mag\per\arcsec\squared}] & = -2.5 \log_{10} \bigg( \frac{F}{F_{\mathrm{ref}}} \cdot \frac{1}{A [\si{\arcsec\squared}] } \bigg) \\
+                                          & = m + 2.5 \log_{10} (A [\si{\arcsec\squared}]) \quad .
+  \end{align}
+
+  \item
+  Die Oberflächenhelligkeit $\mu$ sollte man jedoch nicht mit der Oberflächendichte $\Sigma$ (engl.\ \textit{surface density}) verwechseln.
+  Zwar sind die Einheiten gleich, die Berechning ist jedoch anders:
+  \begin{equation}
+    \Sigma = \frac{m_{\mathrm{tot}}}{A} \quad ,
+  \end{equation}
+  wobei $m_{\mathrm{tot}}$ die gesamte Magnitude innerhalb der Fläche $A$ ist.
+  Man summiert also zunächst den gesamten Fluss in $A$ und bestimmt daraus eine Magnitude.
+\end{enumerate}

@@ -1,0 +1,119 @@
+\documentclass[a4paper,11pt]{article}
+
+% Packages
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[ngerman,english]{babel}
+
+\usepackage{microtype}
+\usepackage{siunitx}
+\usepackage{hyperref}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{MnSymbol}
+
+\usepackage{longtable}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+
+% Document-specifics
+\author{Nils Hoyer}
+\date{\today}
+\title{%
+  Referenzdokument für die Vorlesung\\ ``Einführung in die Astronomie 2''\\[10pt]
+  \large
+  Sommersemester 2022
+}
+
+\newcommand{\entry}[4]{%
+\begin{tabular}{l}%
+#1\\
+\enspace(engl.\ \textit{#2})\\
+\end{tabular}
+& #3 & #4\\\addlinespace}
+
+\newcommand{\dm}{dm}
+
+
+% Package-specifics
+\geometry{%
+  a4paper,
+  top=60pt,
+  left=60pt,
+  right=60pt,
+  bottom=120pt
+}
+
+\hypersetup{%
+  draft=false,
+  colorlinks=true,
+  linkcolor=blue,
+  anchorcolor=blue,
+  citecolor=blue,
+  filecolor=blue,
+  menucolor=blue,
+  runcolor=blue,
+  urlcolor=blue,
+  pagebackref=true,
+  bookmarks=true,
+  linktoc=page,
+  pdftitle={Referenzdokument, Astro2},
+  pdfauthor={Nils Hoyer},
+  pdfcreator={xelatex},
+  pdfproducer={XeLaTeX}
+}
+
+\DeclareSIUnit \pc {pc}
+\DeclareSIUnit \erg {erg}
+\DeclareSIUnit \mag {mag}
+\DeclareSIUnit \arcsec {arcsec}
+\DeclareSIUnit \Lsun {L_{\odot}}
+\DeclareSIUnit \Msun {M_{\odot}}
+
+
+
+\begin{document}
+
+\selectlanguage{ngerman}
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\maketitle
+
+
+\begin{abstract}
+Dieses Dokument stellt eine Zusammenfassung der, aus Tutorensicht, wichtigsten Formeln, Umrechnungen, und Konstanten dar.
+Ziel ist eine relativ kompakte Uebersicht ueber die relevantesten Gleichungen und bekommen, wobei besonderer Wert auf eine korrekte Notation gelegt wird.
+Leider geht besonders der letzte Teil in den meisten Vorlesungen und einigen Publikationen unter, sodass dieses Dokument die Relation von Parametern zueinander verdeutlichen soll.
+
+Aus hoffentlich offensichtlichen Gruenden ist dieses Dokument nicht vollstaendig.
+Grund hierfuer ist der zeitliche Aufwand versus die verfuegbarer Zeit, die verwendete Literatur (falls zutreffend), aber auch das limitierte Wissen der Tutoren.
+Dem entsprechend behalten sich die Autoren vor, Ergaenzungen oder Aenderungen durchzufuehren.
+Am Ende dieser Seite wird jedoch das Datum der letzten Aenderung und die Version des Dokuments angegeben, falls Sie mit Ihrem lokalen Dokument vergleichen wollen.
+
+Anregungen, Kritik, oder Ergaenzungen sind erwuenscht und jederzeit willkommen.
+
+\vspace{10pt}
+\selectlanguage{english}
+For the time being, as this document is related to a lecture given in German, the document will not be available in English language.
+However, keywords will be provided both in German and English, thus, non-German speaker should be able to follow along.
+In the future, an English version may be available.
+\selectlanguage{ngerman}
+\end{abstract}
+
+
+\vfill
+
+Letzte Aenderung vom \today.
+\hfill
+Versionsnummer: 0.2
+
+
+\input{notation.tex}
+\input{formula.tex}
+\input{constants.tex}
+
+
+\end{document}
