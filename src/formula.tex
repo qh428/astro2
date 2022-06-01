@@ -2,17 +2,28 @@
 \section{Formeln und Umrechnungen}
 \label{sec:formeln_und_umrechnungen}
 
-Dieser Abschnitt wird in zwei Unterkategorien aufgeteilt: Photometrie und Kinematik.
-Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus der Vorlesung ``Einführung in die Astronomie 2''.
+Dieser Abschnitt wird in drei Unterkategorien aufgeteilt: Photometrie / Spektroskopie, Kinematik und Verschiedenes.
+Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus der Vorlesung ``Einführung in die Astronomie 1''.
 
 
-\subsection{Photometrie}
-\label{subsec:photometrie}
+\subsection{Photometrie \& Spektroskopie}
+\label{subsec:photometrie_und_spektroskopie}
 
 \begin{enumerate}[label=$\smalltriangleright$]
   \item
+  Die Intensitaet $I$ (engl.\ \textit{intensity}) gibt eine Energie pro Flaeche, Zeit und Winkel an.
+  Der Strahlungsfluss $F$ (engl.\ \textit{flux}) haengt mit der Inentistaet ueber ein Oberflaechenintegral zusammen:
+  \begin{equation}
+    F = \int_{S} \mathrm{d}S \; I = 4\pi I \quad ,
+  \end{equation}
+  wobei wir in fuer das zweite Gleichheitszeichen eine einfach sphaerische Anordnung annehmen.
+  In der Literatur findet man oftmals eine Defition ohne den Raumwinkelfaktor $4\pi$.
+
+
+  \item
   Der Strahlungsfluss $F$ (engl.\ \textit{flux}) gibt die eingehende Energie pro Fläche und Zeit an.
   Üblicherweise hat $F$ die Einheit [\si{\erg\per\centi\metre\squared\per\second}].
+
 
   \item
   Ein Schwarzer Strahler (engl.\ \textit{black body}) ist ein idealisierter Körper, welcher jede einfallende Strahlung absorbiert.
@@ -22,6 +33,7 @@ Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus de
   \end{equation}
   mit den Variablen $\nu$ als Frequenz und $T$ als Temperatur.
   $\mathrm{h}$ ist das Planck'sche Wirkungsquantum, $\mathrm{c}$ die Lichtgeschwindigkeit, und $k_{\mathrm{B}}$ die Boltzmannkonstante.
+
 
   \item
   Der Strahlungsfluss $F$ eines Schwarzen Körpers hängt mit seiner Oberflächentemperatur $T$ zusammen.
@@ -39,6 +51,7 @@ Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus de
     F = \sigma_{\mathrm{SB}} T_{\mathrm{eff}}^{4} \quad  \quad .
   \end{equation}
 
+
   \item
   Das Wien'sche Verschiebungsgesetz (engl.\ \textit{Wien's displacement law}) ist eine Approximation für das Maximum der oben aufgeführten Planck'schen Funktion.
   Es ist gegeben durch
@@ -54,7 +67,7 @@ Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus de
 
 
   \item
-  Die scheinbare Helligkeit (engl.\ \textit{apparent magnitude}) $m$ wird durch einen Strahlungsfluss $F$ bestimmt.
+  Die scheinbare Helligkeit $m$ (engl.\ \textit{apparent magnitude}) wird durch einen Strahlungsfluss $F$ bestimmt.
   Es gilt
   \begin{equation}
     m = -2.5 \log_{10} \bigg( \frac{F}{F_{\mathrm{ref}}} \bigg) \quad ,
@@ -62,19 +75,75 @@ Zunächste wiederholen wir ein paar grundlegende Formeln und Umrechnungen aus de
   wobei $F_{\mathrm{ref}}$ ein Referenzfluss ist.
   Typischerweise nutzt man für $F_{\mathrm{ref}}$ den Fluss des Sterns Vega, jedoch existieren auch andere Referenzflüsse.
 
+
+  \item
+  Die absolute Helligkeit $M$ (engl.\ \textit{absolute magnitude}) entspricht der scheinbaren Helligkeit bei einer Distanz von $d = \SI{10}{\pc}$.
+  Daher gilt
+  \begin{equation}
+    M = m - 5 \log_{10} \frac{d}{[\SI{10}{\pc}]} \quad .
+  \end{equation}
+
+
+  \item
+  Der Distanzmodul {\dm} (engl.\ \textit{distance module}) entspricht der Different der scheinbaren und absoluten Helligkeit und kann zur Distanzbestimmung verwendet werden:
+  \begin{equation}
+    \mathrm{\dm} = m - M = 5\log_{10} \bigg( \frac{d [\si{\pc}]}{\SI{10}{\pc}} \bigg) = 5 \log_{10} ( d [\si{\pc}]) - 5 \quad .
+  \end{equation}
+
+
+  \item
+  Die Leuchtkraft $L$ (engl.\ \textit{luminosity}) eines Objektes kann direkt über die absolute Helligkeit bestimmt werden:
+  \begin{equation}
+    M - M_{\mathrm{ref}} = -2.5 \log_{10} \bigg( \frac{L}{L_{\mathrm{ref}}} \bigg) \quad \leftrightarrow \quad \frac{L}{L_{\mathrm{ref}}} = 10^{-0.4 (M - M_{\mathrm{ref}})} \quad ,
+  \end{equation}
+  wobei $M_{\mathrm{ref}}$ eine Referenzhelligkeit und $L_{\mathrm{ref}}$ eine Referenzleuchtkraft sind.
+  Häufig verwendet man die absolute Helligkeit der Sonne $\mathrm{M}_{\odot}$, um eine Leuchtkraft in Einheiten der solaren Leuchtkraft $\mathrm{L}_{\odot}$ zu erhalten.
+
+
+  \item
+  Wir erhalten auch eine Leuchtkraft $L$, wenn wir den gesamten Fluss $F$ über eine Fläche $A$ integrieren:
+  \begin{equation*}
+    L = \int_{S} \mathrm{d}S \; F(\vec{x}) \quad .
+  \end{equation*}
+  Oftmals wird der Fluss als isotrop angenommen, sodass wir ein einfaches Oberflächeningetral erhalten.
+  Für eine sphärische Symmetrie mit einem Radius $r$ erhalten wir
+  \begin{equation}
+    L = 4\pi r^{2} F = 4\pi r^{2} \sigma_{\mathrm{SB}} T_{\mathrm{eff}}^{4} \quad ,
+  \end{equation}
+  wobei wir beim letzten Gleichheitszeichen angenommen haben, dass wir das System als Schwarzen Körper approximieren können (z.B. ein Stern).
+
+
   \item
   Die Oberflächenhelligkeit $\mu$ (engl.\ \textit{surface brightness}) gibt den Fluss $F$ pro Fläche $A$ an:
   \begin{align}
-    \mu \; [\si{\mag\per\arcsec\squared}] & = -2.5 \log_{10} \bigg( \frac{F}{F_{\mathrm{ref}}} \cdot \frac{1}{A [\si{\arcsec\squared}] } \bigg) \\
-                                          & = m + 2.5 \log_{10} (A [\si{\arcsec\squared}]) \quad .
+    \mu \; [\si{\mag\per\arcsec\squared}] & = -2.5 \log_{10} \bigg( \frac{F}{F_{\mathrm{ref}}} \cdot \frac{1}{A \Big[ \si{\arcsec\squared} \Big] } \bigg) \\
+                                          & = m + 2.5 \log_{10} \Big( A \Big[ \si{\arcsec\squared} \Big] \Big) \quad .
   \end{align}
+
+
+  \item
+  Über die weiter oben aufgeführten Formeln kann man folgende Formel errechnen:
+  \begin{equation}
+    \mu \; \Big[ \si{\Lsun\per\pc\squared} \Big] \approx \frac{1}{\alpha^{2} \; \Big[ \si{\arcsec\squared} \Big]} 10^{-0.4 \cdot (m \; [\si{\mag}] - \mathrm{M}_{\odot} - 21.572)} \quad ,
+  \end{equation}
+  wobei man eine Fläche $\alpha^{2}$ und eine Magnitude $m$ einsetzt, um eine Oberflächenhelligkeit $\mu$ zu erhalten.
+  $\mathrm{M}_{\odot}$ ist die absolute Magnitude der Sonne.
+
+
+  \item
+  Falls bereits eine Oberflächenhelligkeit $\mu$ in der Einheit $\Big[ \si{\mag\per\arcsec\squared} \Big]$ gegeben ist, können wir diese natürlich in die Einheit $\Big[ \si{\Lsun\per\pc\squared} \Big]$ umrechnen:
+  \begin{equation}
+    \mu \; \Big[ \si{\mag\per\arcsec\squared} \Big] = 21.572 + \mathrm{M}_{\odot} - 2.5 \log_{10} \Big( \mu \Big[ \si{\Lsun\per\pc\squared} \Big] \Big) \quad .
+  \end{equation}
+
+
 
   \item
   Die Oberflächenhelligkeit $\mu$ sollte man jedoch nicht mit der Oberflächendichte $\Sigma$ (engl.\ \textit{surface density}) verwechseln.
   Zwar sind die Einheiten gleich, die Berechning ist jedoch anders:
   \begin{equation}
-    \Sigma = \frac{m_{\mathrm{tot}}}{A} \quad ,
+    \Sigma \; \Big[ \si{\mag\per\arcsec\squared} \Big] = \frac{m_{\mathrm{tot}} \; [\si{\mag}]}{A \; \Big[ \si{\arcsec\squared} \Big]} \quad ,
   \end{equation}
-  wobei $m_{\mathrm{tot}}$ die gesamte Magnitude innerhalb der Fläche $A$ ist.
-  Man summiert also zunächst den gesamten Fluss in $A$ und bestimmt daraus eine Magnitude.
+  wobei $m_{\mathrm{tot}}$ die gesamte Helligkeit innerhalb der Fläche $A$ ist.
+  Man summiert also zunächst den gesamten Fluss in $A$ und bestimmt daraus eine Helligkeit.
 \end{enumerate}

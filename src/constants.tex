@@ -1,3 +1,44 @@
 \clearpage
 \section{Konstanten}
 \label{sec:konstanten}
+
+
+\begin{ThreePartTable}
+  \renewcommand\TPTminimum{\textwidth}
+
+  %\begin{TableNotes}
+  %  \item[(a)] My item
+  %\end{TableNotes}
+
+  \begin{longtable}{ l @{\extracolsep{\fill}} *{3}{l}}
+    \caption[]{Wichtige Konstanten für die in diesem Dokument aufgeführten Formeln.}\\
+    \label{tab:constants}\\
+    \toprule
+    \multicolumn{1}{c}{Begriff} & \multicolumn{1}{c}{Notation} & \multicolumn{1}{c}{Wert} \\
+    \midrule
+    \endfirsthead
+
+    \toprule
+    \multicolumn{1}{c}{Begriff} & \multicolumn{1}{c}{Notation} & \multicolumn{1}{c}{Wert} \\
+    \midrule
+    \endhead
+
+    \midrule[\heavyrulewidth]
+    \multicolumn{3}{l}{\textit{fortgesetzt}}\\
+    \endfoot
+
+    \midrule[\heavyrulewidth]
+    %\insertTableNotes
+    \endlastfoot
+
+    \entry{Sonnenleuchtkraft}{solar luminosity}{$\mathrm{L}_{\odot}$}{\SI{3.828e33}{\erg\per\second}}
+    \entry{Sonnenmasse}{solar mass}{$\mathcal{M}_{\odot}$}{\SI{1.989e33}{\gram}}
+    \entry{Sonneradius}{solar radius}{$\mathrm{r}_{\odot}$}{\SI{6.96e10}{\centi\metre}}
+    \entry{Abs.\ Sonnenhelligkeit im V-band (Vega-System)}{abs.\ solar magnitude in the V-band}{$\mathrm{M}_{\odot , \, V}^{\mathrm{vega}}$}{\SI{4.83}{\mag}}
+    \entry{Abs.\ bolometrische Sonnenhelligkeit}{abs.\ solar bolometric magnitude}{$\mathrm{M}_{\odot , \, \mathrm{bol}}$}{\SI{4.74}{\mag}}
+    \entry{Sch.\ bolometrische Sonnenhelligkeit}{app.\ solar bolometric magnitude}{$\mathrm{m}_{\odot , \, \mathrm{bol}}$}{\SI{-26.83}{\mag}}
+
+
+  \end{longtable}
+\end{ThreePartTable}
+
